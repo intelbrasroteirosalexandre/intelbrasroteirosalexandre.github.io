@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        .loader {
+            width: 200px;
+            height: 3px;
+            background-color: #222222;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loader-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #00FF00;
+            animation: loading 0.5s ease-out forwards;
+        }
+
+        .loader-text {
+            margin-top: 15px;
+            color: #ffffff;
+            font-size: 14px;
+            opacity: 0;
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader">
+            <div class="loader-bar"></div>
+        </div>
+        <div class="loader-text">Iniciando sistema...</div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "https://alexandreroteiros.notion.site/Alexandre-Roteiros-Intelbras-177214b1b1b98083a3ddf5ffb3790cb4?pvs=4";
+            }, 600);
+        };
+    </script>
+</body>
+</html>
