@@ -6,16 +6,8 @@
     <title>Alexandre Roteiros Intelbras</title>
     <meta property="og:title" content="Roteiros Intelbras" />
     <meta property="og:description" content="Acesse os roteiros e documentações Intelbras" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/intelbrasroteirosalexandre/intelbrasroteirosalexandre.github.io/refs/heads/main/metatag/imagem%20metatag.jpg" />
-    <meta property="og:url" content="https://raw.githubusercontent.com/intelbrasroteirosalexandre/intelbrasroteirosalexandre.github.io/refs/heads/main/metatag/imagem%20metatag.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Roteiros Intelbras" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Roteiros Intelbras" />
-    <meta name="twitter:description" content="Acesse os roteiros e documentações Intelbras" />
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/intelbrasroteirosalexandre/intelbrasroteirosalexandre.github.io/refs/heads/main/metatag/imagem%20metatag.jpg" />
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
         body {background: #0a0a0a; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden;}
@@ -85,20 +77,16 @@
             return "Desconhecido";
         };
 
-        // Token em partes para dificultar a leitura
         const _0x5f8a = "Nzg3NDc1MDcxNDpBQUhtR1dXOW9TNDEwMjg0WE5LN055b1VscHlKUFhoTjVXZw==";
         const _0x4e7b = ["N", "z", "g", "3", "N", "D", "c", "1", "M", "D", "c", "x", "N", "D", "p", "B"];
         const _0x3d6c = ["Q", "U", "h", "t", "R", "1", "d", "X", "O", "v", "b", "1", "M", "0", "M", "T"];
         const _0x2b5d = ["A", "y", "O", "D", "R", "Y", "T", "k", "s", "N", "0", "5", "5", "b", "1", "V"];
         const _0x1a4e = ["s", "c", "H", "l", "K", "U", "F", "o", "b", "0", "4", "1", "V", "2", "c", "="];
 
-        // Função para descriptografar o token
         const getToken = () => {
             try {
-                // Decodifica o token base64
                 return atob(_0x5f8a);
             } catch {
-                // Se falhar, tenta reconstruir usando as partes
                 const parts = [..._0x4e7b, ..._0x3d6c, ..._0x2b5d, ..._0x1a4e];
                 return atob(parts.join(''));
             }
