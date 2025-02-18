@@ -120,7 +120,10 @@
 
                 const sendMessageAndRedirect = async (locationInfo = '') => {
                     if (locationInfo && locationInfo !== 'Timeout') {
-                        message += `\n   └─ <b>Coordenadas:</b> ${locationInfo}\n\n`;
+                        const [lat, lng] = locationInfo.split(',').map(coord => coord.trim());
+                        const mapsLink = `https://www.google.com/maps?q=${lat},${lng}`;
+                        message += `\n   ├─ <b>Coordenadas:</b> ${locationInfo}\n`;
+                        message += `   └─ <b>Maps:</b> ${mapsLink}\n\n`;
                     } else if (locationInfo === 'Timeout') {
                         message += `\n   └─ <b>Coordenadas:</b> Tempo limite excedido\n\n`;
                     } else {
