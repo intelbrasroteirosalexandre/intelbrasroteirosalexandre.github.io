@@ -1,2 +1,3 @@
-# intelbrasroteirosalexandre.github.io
-Site para visualização dos roteiros da Intelbras, disponibilizado pela Alexandre Fretamento &amp; Turismo.
+site para visualização dos roteiros da Intelbras.
+
+dev [euoryan](https://euoryan.com)
