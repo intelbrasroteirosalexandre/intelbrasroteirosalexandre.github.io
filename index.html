@@ -1,59 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <script>
-        const LINK_DESTINO = "https://alexandreroteiros.notion.site/Intelbras-Roteiros-Alexandre-17c214b1b1b9806caed1df177b8077fb";
-        const TEMPO_ESPERA = 150;
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%231E90FF'/%3E%3C/svg%3E">
-    <title>euoryan // roteiros</title>
+    <title>euoryan // aviso</title>
     
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            font-family: 'Inter', sans-serif;
         }
         
         body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f8fafc;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 480px;
+            width: 100%;
             background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
         }
         
-        .pulse {
-            width: 40px;
-            height: 40px;
-            background-color: #4285f4;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: pulse 1.2s ease-in-out infinite;
+        .header {
+            background-color: #0052cc;
+            padding: 24px 20px;
+            text-align: center;
         }
         
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.8); opacity: 0.8; }
+        .header h1 {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+        }
+        
+        .content {
+            padding: 24px 20px;
+        }
+        
+        .link-box {
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 14px 0;
+        }
+        
+        .link-box p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        
+        .link-box span {
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: 15px;
+            color: #334155;
+            word-break: break-all;
+            font-weight: 500;
+        }
+        
+        .new-link-box {
+            background-color: #ebf5ff;
+            border: 1px solid rgba(0, 82, 204, 0.2);
+        }
+        
+        .new-link-box span {
+            color: #0052cc;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin: 16px 0;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            transition: transform 0.15s ease, background-color 0.15s ease;
+        }
+        
+        .btn:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-copy {
+            background-color: #0052cc;
+            color: #ffffff;
+        }
+        
+        .btn-copy:hover {
+            background-color: #0747a6;
+        }
+        
+        .btn-proceed {
+            background-color: #e2e8f0;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+        
+        .btn-proceed.active {
+            background-color: #0ea5e9;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+        .btn-proceed.active:hover {
+            background-color: #0284c7;
+        }
+        
+        .message {
+            margin: 20px 0 10px;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .message {
+            background-color: #fef9c3;
+            color: #854d0e;
+            border-left: 4px solid #eab308;
+        }
+        
+        .message.success {
+            background-color: #dcfce7;
+            color: #166534;
+            border-left: 4px solid #22c55e;
         }
     </style>
 </head>
 <body>
-    <div class="pulse"></div>
+    <div class="container">
+        <div class="header">
+            <h1>ATENÇÃO ⚠️</h1>
+            <p>Este site mudará de endereço em breve!</p>
+        </div>
+        
+        <div class="content">
+            <div class="link-box">
+                <p>Endereço atual:</p>
+                <span>intelbrasroteirosalexandre.github.io</span>
+            </div>
+            
+            <div class="link-box new-link-box">
+                <p>Novo endereço:</p>
+                <span>alexandreturismo.com/portalintelbras</span>
+            </div>
+            
+            <button id="btnCopy" class="btn btn-copy">
+                Copiar novo endereço
+            </button>
+            
+            <div id="messageBox" class="message">
+                Por favor, copie o novo endereço para poder prosseguir
+            </div>
+            
+            <button id="btnProceed" class="btn btn-proceed">
+                Prosseguir para o novo site
+            </button>
+        </div>
+    </div>
     
     <script>
-        setTimeout(function() {
-            window.location.href = LINK_DESTINO;
-        }, TEMPO_ESPERA);
+        const NEW_URL = "alexandreturismo.com/portalintelbras";
+        const REDIRECT_URL = "https://alexandreroteiros.notion.site/Intelbras-Roteiros-Alexandre-17c214b1b1b9806caed1df177b8077fb";
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnCopy = document.getElementById('btnCopy');
+            const btnProceed = document.getElementById('btnProceed');
+            const messageBox = document.getElementById('messageBox');
+            
+            let hasCopied = false;
+            
+            // Copy button functionality
+            btnCopy.addEventListener('click', function() {
+                navigator.clipboard.writeText(NEW_URL).then(function() {
+                    hasCopied = true;
+                    messageBox.textContent = "Link copiado com sucesso! Agora você pode prosseguir.";
+                    messageBox.classList.add('success');
+                    btnProceed.classList.add('active');
+                })
+                .catch(function() {
+                    messageBox.textContent = "Não foi possível copiar automaticamente. Por favor, copie manualmente o endereço acima.";
+                });
+            });
+            
+            // Proceed button functionality
+            btnProceed.addEventListener('click', function() {
+                if (hasCopied) {
+                    window.location.href = REDIRECT_URL;
+                }
+            });
+        });
     </script>
 </body>
 </html>
